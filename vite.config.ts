@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: mode === 'production' ? '/walid-devops-portfolio/' : '/',
+  base: '/', // Pas de sous-dossier
   build: {
     outDir: 'dist'
   }
