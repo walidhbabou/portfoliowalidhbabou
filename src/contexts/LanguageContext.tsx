@@ -20,7 +20,7 @@ const translations = {
     // Hero
     heroTitle: "Étudiant en Master Réseaux et Systèmes d'Information",
     heroSubtitle: "Développeur Full Stack & Passionné DevOps Cloud",
-    heroDescription: "À la recherche d'un stage PFA, je me spécialise dans le développement web moderne et les pratiques DevOps. Curieux et autonome, je cherche à mettre en pratique mes connaissances à travers des projets stimulants.",
+    heroDescription: "Développeur fullstack passionné, avec une forte appétence pour les pratiques DevOps, je conçois des applications web modernes tout en maîtrisant le déploiement, l’automatisation et la gestion d’infrastructures cloud. Curieux, rigoureux et autonome, je cherche à relever des défis techniques à travers des projets innovants et collaboratifs.",
     downloadCV: "Télécharger CV",
     contactMe: "Me Contacter",
     
@@ -88,7 +88,7 @@ const translations = {
     // Hero
     heroTitle: "Master's Student in Networks and Information Systems",
     heroSubtitle: "Full Stack Developer & DevOps Cloud Enthusiast",
-    heroDescription: "Seeking an end-of-year project internship, I specialize in modern web development and DevOps practices. Curious and autonomous, I aim to apply my knowledge through stimulating projects.",
+    heroDescription: "Fullstack developer with a strong interest in DevOps practices, I build modern web applications while managing deployment, automation, and cloud infrastructure. Curious, detail-oriented, and autonomous, I'm eager to take on technical challenges through innovative and collaborative projects.",
     downloadCV: "Download CV",
     contactMe: "Contact Me",
     
