@@ -19,10 +19,10 @@ const Experience = () => {
       title: 'Stage Développeur FullStack',
       company: 'Valhko',
       date: 'Mai - Juin 2025',
-      location: 'RABAT, Maroc',
+      location: 'Rabat, Maroc',
       description:
         'Stage de deux mois axé sur le développement web et l’intégration de fonctionnalités backend et frontend.',
-      techs: ['Node.js', 'React', 'MongoDB', 'TailwindCSS'],
+      techs: ['java', 'React', 'Micro service'],
     },
     {
       title: 'Projet Freelance – Système de Gestion eVote',
