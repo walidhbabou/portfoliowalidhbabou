@@ -10,7 +10,7 @@ const Experience = () => {
     {
       title: t('devFullStack'),
       company: t('ministry'),
-      date: Mai -'Juin 2024',
+      date: 'Mai -Juin 2024',
       location: 'Rabat, Maroc',
       description: t('expDescription'),
       techs: ['Laravel', 'Bootstrap', 'MySQL', 'PHP', 'JavaScript'],
