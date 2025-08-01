@@ -10,7 +10,7 @@ const Experience = () => {
     {
       title: t('devFullStack'),
       company: t('ministry'),
-      date: 'Juin 2024',
+      date: Mai -'Juin 2024',
       location: 'Rabat, Maroc',
       description: t('expDescription'),
       techs: ['Laravel', 'Bootstrap', 'MySQL', 'PHP', 'JavaScript'],
@@ -18,8 +18,8 @@ const Experience = () => {
     {
       title: 'Stage Développeur FullStack',
       company: 'Valhko',
-      date: 'Mai - Juin 2024',
-      location: 'Casablanca, Maroc',
+      date: 'Mai - Juin 2025',
+      location: 'RABAT, Maroc',
       description:
         'Stage de deux mois axé sur le développement web et l’intégration de fonctionnalités backend et frontend.',
       techs: ['Node.js', 'React', 'MongoDB', 'TailwindCSS'],
