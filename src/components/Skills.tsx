@@ -57,7 +57,7 @@ const Skills = () => {
       skills: [
         { name: 'Docker', level: 85, icon: '🐳' },
         { name: 'Kubernetes', level: 75, icon: '⎈' },
-        { name: 'Jenkins', level: 80, icon: '🔧' },
+        { name: 'Jenkins', level: 85, icon: '🔧' },
         { name: 'AWS', level: 78, icon: '☁️' },
         { name: 'Terraform', level: 70, icon: '🏗️' }
       ]
