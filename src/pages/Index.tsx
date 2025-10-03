@@ -22,12 +22,14 @@ const Index = () => {
       <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <Navigation />
         <LanguageSwitcher />
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Contact />
+        <main className="pt-16 sm:pt-20">
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Contact />
+        </main>
       </div>
     </LanguageProvider>
   );

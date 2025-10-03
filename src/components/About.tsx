@@ -28,55 +28,55 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-800/50">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gray-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             {t('aboutTitle')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-fade-in">
-            <p className="text-gray-300 text-lg leading-relaxed">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="space-y-4 sm:space-y-6 animate-fade-in">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
               {t('aboutDescription')}
             </p>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               Avec une solide formation en informatique et une passion pour les technologies émergentes, 
               je développe des solutions innovantes en combinant développement web moderne et pratiques DevOps. 
               Mon objectif est de contribuer à des projets ambitieux qui repoussent les limites technologiques.
             </p>
             
-            <div className="grid grid-cols-2 gap-4 pt-6">
-              <div className="text-center p-4 bg-gray-900/50 rounded-lg border border-gray-700">
-                <div className="text-2xl font-bold text-blue-400">15+</div>
-                <div className="text-gray-400 text-sm">Projets Réalisés</div>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4 sm:pt-6">
+              <div className="text-center p-3 sm:p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+                <div className="text-xl sm:text-2xl font-bold text-blue-400">15+</div>
+                <div className="text-gray-400 text-xs sm:text-sm">Projets Réalisés</div>
               </div>
-              <div className="text-center p-4 bg-gray-900/50 rounded-lg border border-gray-700">
-                <div className="text-2xl font-bold text-purple-400">5+</div>
-                <div className="text-gray-400 text-sm">Technologies Maîtrisées</div>
+              <div className="text-center p-3 sm:p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+                <div className="text-xl sm:text-2xl font-bold text-purple-400">5+</div>
+                <div className="text-gray-400 text-xs sm:text-sm">Technologies Maîtrisées</div>
               </div>
             </div>
           </div>
 
-          <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="flex items-center gap-3 mb-8">
+          <div className="space-y-4 sm:space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="flex items-center gap-3 mb-6 sm:mb-8">
               <GraduationCap className="text-blue-400" size={24} />
-              <h3 className="text-2xl font-semibold text-white">{t('education')}</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-white">{t('education')}</h3>
             </div>
             
             {education.map((edu, index) => (
               <div 
                 key={index} 
-                className="bg-gray-900/50 p-6 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10"
+                className="bg-gray-900/50 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10"
               >
-                <div className="flex items-start gap-4">
-                  <div className="text-2xl">{edu.icon}</div>
-                  <div className="flex-1">
-                    <h4 className="text-white font-semibold mb-1">{edu.degree}</h4>
-                    <p className="text-gray-400 text-sm mb-2">{edu.school}</p>
-                    <div className="flex items-center gap-2 text-blue-400 text-sm">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="text-xl sm:text-2xl flex-shrink-0">{edu.icon}</div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-white font-semibold mb-1 text-sm sm:text-base">{edu.degree}</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm mb-2">{edu.school}</p>
+                    <div className="flex items-center gap-2 text-blue-400 text-xs sm:text-sm">
                       <Calendar size={14} />
                       <span>{edu.period}</span>
                     </div>

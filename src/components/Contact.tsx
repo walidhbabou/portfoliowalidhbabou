@@ -53,62 +53,62 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-800/50">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             {t('contactTitle')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-4"></div>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
             {t('contactDescription')}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Info */}
-          <div className="space-y-8 animate-fade-in">
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 p-4 bg-gray-900/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full">
+          <div className="space-y-6 lg:space-y-8 animate-fade-in">
+            <div className="space-y-4 lg:space-y-6">
+              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-900/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+                <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-2.5 sm:p-3 rounded-full flex-shrink-0">
                   <Mail size={20} className="text-white" />
                 </div>
-                <div>
-                  <h3 className="text-white font-semibold">{t('contactEmail') || 'Email'}</h3>
-                  <p className="text-gray-400">walid.hbabou1999@gmail.com</p>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-white font-semibold text-sm sm:text-base">{t('contactEmail') || 'Email'}</h3>
+                  <p className="text-gray-400 text-xs sm:text-sm break-all">walid.hbabou1999@gmail.com</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 bg-gray-900/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
-                <div className="bg-gradient-to-r from-green-500 to-blue-600 p-3 rounded-full">
+              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-900/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+                <div className="bg-gradient-to-r from-green-500 to-blue-600 p-2.5 sm:p-3 rounded-full flex-shrink-0">
                   <Phone size={20} className="text-white" />
                 </div>
-                <div>
-                  <h3 className="text-white font-semibold">{t('contactPhone') || 'Téléphone'}</h3>
-                  <p className="text-gray-400">+212 607040821</p>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-white font-semibold text-sm sm:text-base">{t('contactPhone') || 'Téléphone'}</h3>
+                  <p className="text-gray-400 text-xs sm:text-sm">+212 607040821</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 bg-gray-900/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
-                <div className="bg-gradient-to-r from-purple-500 to-cyan-600 p-3 rounded-full">
+              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-900/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+                <div className="bg-gradient-to-r from-purple-500 to-cyan-600 p-2.5 sm:p-3 rounded-full flex-shrink-0">
                   <MapPin size={20} className="text-white" />
                 </div>
-                <div>
-                  <h3 className="text-white font-semibold">{t('contactLocation') || 'Localisation'}</h3>
-                  <p className="text-gray-400">Annajah GH 28 MM 188 Appt 2, Tamessna</p>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-white font-semibold text-sm sm:text-base">{t('contactLocation') || 'Localisation'}</h3>
+                  <p className="text-gray-400 text-xs sm:text-sm">Annajah GH 28 MM 188 Appt 2, Tamessna</p>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="pt-6">
-              <h3 className="text-white font-semibold mb-4">{t('contactFollowMe') || 'Suivez-moi'}</h3>
-              <div className="flex gap-4">
+            <div className="pt-4 lg:pt-6">
+              <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t('contactFollowMe') || 'Suivez-moi'}</h3>
+              <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start">
                 <a 
                   href="https://github.com/walidhbabou"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gray-800 p-3 rounded-full hover:bg-blue-600 transition-all duration-300 transform hover:scale-110"
+                  className="bg-gray-800 p-2.5 sm:p-3 rounded-full hover:bg-blue-600 transition-all duration-300 transform hover:scale-110"
                 >
                   <Github size={20} className="text-white" />
                 </a>
@@ -116,7 +116,7 @@ const Contact = () => {
                   href="https://linkedin.com/in/walid-hbabou"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gray-800 p-3 rounded-full hover:bg-blue-600 transition-all duration-300 transform hover:scale-110"
+                  className="bg-gray-800 p-2.5 sm:p-3 rounded-full hover:bg-blue-600 transition-all duration-300 transform hover:scale-110"
                 >
                   <Linkedin size={20} className="text-white" />
                 </a>
@@ -126,9 +126,9 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
-                <label htmlFor="name" className="block text-white font-medium mb-2">
+                <label htmlFor="name" className="block text-white font-medium mb-2 text-sm sm:text-base">
                   {t('contactName') || 'Nom Complet'}
                 </label>
                 <input
@@ -139,13 +139,13 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   disabled={isLoading}
-                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors duration-200 disabled:opacity-50"
+                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors duration-200 disabled:opacity-50 text-sm sm:text-base"
                   placeholder={t('contactNamePlaceholder') || 'Votre nom complet'}
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-white font-medium mb-2">
+                <label htmlFor="email" className="block text-white font-medium mb-2 text-sm sm:text-base">
                   {t('contactEmail') || 'Email'}
                 </label>
                 <input
@@ -156,13 +156,13 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   disabled={isLoading}
-                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors duration-200 disabled:opacity-50"
+                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors duration-200 disabled:opacity-50 text-sm sm:text-base"
                   placeholder={t('contactEmailPlaceholder') || 'votre.email@exemple.com'}
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-white font-medium mb-2">
+                <label htmlFor="message" className="block text-white font-medium mb-2 text-sm sm:text-base">
                   {t('contactMessage') || 'Message'}
                 </label>
                 <textarea
@@ -171,9 +171,9 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  rows={5}
+                  rows={4}
                   disabled={isLoading}
-                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors duration-200 resize-none disabled:opacity-50"
+                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors duration-200 resize-none disabled:opacity-50 text-sm sm:text-base"
                   placeholder={t('contactMessagePlaceholder') || 'Votre message...'}
                 ></textarea>
               </div>
@@ -181,7 +181,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 text-sm sm:text-base"
               >
                 <Send size={20} />
                 {isLoading ? (t('contactSending') || 'Envoi en cours...') : (t('contactSendButton') || 'Envoyer le Message')}
