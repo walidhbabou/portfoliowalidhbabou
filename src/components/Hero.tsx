@@ -54,7 +54,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 lg:gap-4 text-sm text-gray-400 justify-center lg:justify-start">
               <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <MapPin size={16} className="text-blue-400 flex-shrink-0" />
-                <span className="text-xs sm:text-sm">Tamessna, Maroc</span>
+                <span className="text-xs sm:text-sm">Rabat, Maroc</span>
               </div>
               <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <Phone size={16} className="text-blue-400 flex-shrink-0" />

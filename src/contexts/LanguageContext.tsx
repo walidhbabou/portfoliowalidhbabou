@@ -20,7 +20,7 @@ const translations = {
     // Hero
     heroTitle: "Étudiant en Master Réseaux et Systèmes d'Information",
     heroSubtitle: "Développeur Full Stack & Passionné DevOps Cloud",
-    heroDescription: "Développeur fullstack passionné, avec une forte appétence pour les pratiques DevOps, je conçois des applications web modernes tout en maîtrisant le déploiement, l’automatisation et la gestion d’infrastructures cloud. Curieux, rigoureux et autonome, je cherche à relever des défis techniques à travers des projets innovants et collaboratifs.",
+    heroDescription: "Curieux et autonome, je développe des solutions modernes et innovantes tout en relevant des défis techniques avec rigueur et créativité.",
     downloadCV: "Télécharger CV",
     contactMe: "Me Contacter",
     
@@ -28,11 +28,40 @@ const translations = {
     aboutTitle: "À Propos de Moi",
     aboutDescription: "Passionné par les technologies émergentes, je combine développement web et expertise DevOps pour créer des solutions robustes et scalables.",
     
-    // Experience
-    experienceTitle: "Expérience Professionnelle",
-    devFullStack: "Développeur Full Stack",
-    ministry: "Ministère de l'Éducation Nationale, Rabat",
-    expDescription: "Conception et développement d'une application de gestion de projets avec Laravel, Bootstrap et MySQL.",
+  // Experience
+  experienceTitle: "Expérience Professionnelle",
+  // Valhko
+  valhkoTitle: "Stagiaire Full Stack / Microservices",
+  valhkoCompany: "Valhko Ltd",
+  valhkoDate: "Juil 2025 - Sep 2025",
+  valhkoLocation: "Rabat, Maroc",
+  valhkoDescription: "Développement d’une application microservices avec intégration front-end et déploiement cloud.",
+  valhkoDetail1: "Conception et développement du backend avec Spring Boot pour des APIs REST robustes et sécurisées.",
+  valhkoDetail2: "Création et intégration d’interfaces utilisateur dynamiques avec React.",
+  valhkoDetail3: "Développement de services additionnels en Python, intégrés via Eureka pour la découverte de services.",
+  valhkoDetail4: "Déploiement et configuration des applications sur Azure afin d’assurer haute disponibilité et scalabilité.",
+  valhkoDetail5: "Participation aux cérémonies Scrum/Agile et suivi des tâches via Jira.",
+  valhkoDetail6: "Environnement technique : Java, Spring Boot, Python, React, Microservices, Eureka, Azure, Git, Docker, Scrum/Agile.",
+  // VMS
+  vmsTitle: "Développeur Full Stack",
+  vmsCompany: "Projet VMS",
+  vmsDate: "2025",
+  vmsLocation: "Remote",
+  vmsDescription: "Conception et développement d’une plateforme de gestion et de pilotage du processus de sourcing des prestations intellectuelles (VMS Cloud)",
+  vmsDetail1: "Modélisation de la base de données et gestion du stockage de fichiers via AWS S3.",
+  vmsDetail2: "Développement de l’interface utilisateur avec Angular, incluant formulaires et dashboards interactifs.",
+  vmsDetail3: "Création d’APIs REST avec Spring Boot pour la communication front-end/back-end.",
+  vmsDetail4: "Intégration et test des fonctionnalités pour garantir un workflow fluide.",
+  // Ministère
+  ministryTitle: "Développeur Full Stack (Stage)",
+  ministryCompany: "Ministère de l’Éducation Nationale",
+  ministryDate: "Juin 2024",
+  ministryLocation: "Rabat, Maroc",
+  ministryDescription: "Développement d’une application de gestion de projets pour le ministère.",
+  ministryDetail1: "Conception et développement du backend avec Laravel pour la gestion complète des projets.",
+  ministryDetail2: "Mise en place de la base de données MySQL pour stocker et gérer les informations de manière sécurisée.",
+  ministryDetail3: "Développement d’une interface utilisateur responsive avec Bootstrap pour une expérience fluide sur tous les appareils.",
+  ministryDetail4: "Tests unitaires et intégration pour garantir la fiabilité de l’application. Environnement technique : Laravel, MySQL, Bootstrap, PHP, Git, HTML5, CSS3.",
     
     // Projects
     projectsTitle: "Mes Projets",
@@ -88,7 +117,7 @@ const translations = {
     // Hero
     heroTitle: "Master's Student in Networks and Information Systems",
     heroSubtitle: "Full Stack Developer & DevOps Cloud Enthusiast",
-    heroDescription: "Fullstack developer with a strong interest in DevOps practices, I build modern web applications while managing deployment, automation, and cloud infrastructure. Curious, detail-oriented, and autonomous, I'm eager to take on technical challenges through innovative and collaborative projects.",
+    heroDescription: "Curious and autonomous, I create modern, innovative solutions while tackling technical challenges with rigor and creativity.",
     downloadCV: "Download CV",
     contactMe: "Contact Me",
     
@@ -96,11 +125,40 @@ const translations = {
     aboutTitle: "About Me",
     aboutDescription: "Passionate about emerging technologies, I combine web development and DevOps expertise to create robust and scalable solutions.",
     
-    // Experience
-    experienceTitle: "Professional Experience",
-    devFullStack: "Full Stack Developer",
-    ministry: "Ministry of National Education, Rabat",
-    expDescription: "Design and development of a project management application using Laravel, Bootstrap, and MySQL.",
+  // Experience
+  experienceTitle: "Professional Experience",
+  // Valhko
+  valhkoTitle: "Full Stack / Microservices Intern",
+  valhkoCompany: "Valhko Ltd",
+  valhkoDate: "Jul 2025 - Sep 2025",
+  valhkoLocation: "Rabat, Morocco",
+  valhkoDescription: "Development of a microservices application with front-end integration and cloud deployment.",
+  valhkoDetail1: "Designed and developed backend with Spring Boot for robust and secure REST APIs.",
+  valhkoDetail2: "Created and integrated dynamic user interfaces with React.",
+  valhkoDetail3: "Developed additional services in Python, integrated via Eureka for service discovery.",
+  valhkoDetail4: "Deployed and configured applications on Azure to ensure high availability and scalability.",
+  valhkoDetail5: "Participated in Scrum/Agile ceremonies and tracked tasks using Jira.",
+  valhkoDetail6: "Technical environment: Java, Spring Boot, Python, React, Microservices, Eureka, Azure, Git, Docker, Scrum/Agile.",
+  // VMS
+  vmsTitle: "Full Stack Developer",
+  vmsCompany: "VMS Project",
+  vmsDate: "2025",
+  vmsLocation: "Remote",
+  vmsDescription: "Design and development of a management and steering platform for the intellectual services sourcing process (VMS Cloud)",
+  vmsDetail1: "Database modeling and file storage management via AWS S3.",
+  vmsDetail2: "Developed the user interface with Angular, including interactive forms and dashboards.",
+  vmsDetail3: "Created REST APIs with Spring Boot for front-end/back-end communication.",
+  vmsDetail4: "Integrated and tested features to ensure a smooth workflow.",
+  // Ministry
+  ministryTitle: "Full Stack Developer (Internship)",
+  ministryCompany: "Ministry of National Education",
+  ministryDate: "June 2024",
+  ministryLocation: "Rabat, Morocco",
+  ministryDescription: "Development of a project management application for the ministry.",
+  ministryDetail1: "Designed and developed backend with Laravel for complete project management.",
+  ministryDetail2: "Set up MySQL database to securely store and manage information.",
+  ministryDetail3: "Developed a responsive user interface with Bootstrap for a smooth experience on all devices.",
+  ministryDetail4: "Unit and integration testing to ensure application reliability. Technical environment: Laravel, MySQL, Bootstrap, PHP, Git, HTML5, CSS3.",
     
     // Projects
     projectsTitle: "My Projects",

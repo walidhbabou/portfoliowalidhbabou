@@ -7,6 +7,14 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Duel Arena (Gaming)",
+      description: "Jeu en ligne multijoueur de duel en temps réel avec interface moderne et animations dynamiques.",
+      technologies: ["React", "Node.js", "Socket.io", "Vercel"],
+      icon: <Cloud className="text-indigo-400" size={24} />,
+      category: "Gaming",
+      demoLink: "https://duel-arena-n9k8.vercel.app/"
+    },
+    {
       title: "Application Web de Gestion de Médias",
       description: "Application web pour la gestion de contenu média avec design responsive et interface moderne.",
       technologies: ["Bootstrap", "Ajax", "Spring Boot", "Java"],
@@ -96,44 +104,44 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
-            <div 
+            <div
               key={index}
-              className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 p-4 sm:p-6 rounded-xl border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 group animate-fade-in hover:scale-105"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="glass bg-gradient-to-br from-gray-900/60 to-gray-800/60 p-5 sm:p-7 rounded-2xl border border-blue-900/30 hover:border-blue-500/60 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 group animate-fade-in-up hover:scale-[1.04] relative overflow-hidden"
+              style={{ animationDelay: `${index * 0.12}s` }}
             >
               <div className="flex items-center justify-between mb-3 sm:mb-4">
                 {project.icon}
-                <span className="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded-full">
+                <span className="text-xs font-semibold text-white bg-gradient-to-r from-blue-500/70 to-purple-500/70 px-3 py-1 rounded-full shadow-md border border-blue-400/30 animate-glow-bar">
                   {project.category}
                 </span>
               </div>
-              
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-blue-400 transition-colors duration-200 line-clamp-2">
+
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-blue-400 transition-colors duration-200 line-clamp-2 drop-shadow-lg">
                 {project.title}
               </h3>
-              
-              <p className="text-gray-400 text-sm mb-3 sm:mb-4 leading-relaxed line-clamp-3">
+
+              <p className="text-gray-300 text-sm mb-3 sm:mb-4 leading-relaxed line-clamp-3">
                 {project.description}
               </p>
-              
-              <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+
+              <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
                 {project.technologies.map((tech) => (
-                  <span 
+                  <span
                     key={tech}
-                    className="px-2 py-1 bg-blue-500/10 text-blue-300 rounded text-xs border border-blue-500/20"
+                    className="px-2.5 py-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-blue-200 rounded-full text-xs border border-blue-500/20 font-medium shadow-sm hover:bg-blue-500/20 transition-colors duration-200"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              
-              <div className="flex gap-3 flex-wrap">
+
+              <div className="flex gap-3 flex-wrap mt-2">
                 {project.githubLinks ? (
                   project.githubLinks.map((link, linkIndex) => (
-                    <button 
+                    <button
                       key={linkIndex}
                       onClick={() => handleGithubClick(link)}
-                      className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm"
+                      className="flex items-center gap-2 text-blue-300 hover:text-blue-500 bg-blue-900/20 hover:bg-blue-700/20 border border-blue-500/20 rounded-lg px-3 py-1.5 font-medium transition-all duration-200 text-xs sm:text-sm shadow-sm"
                     >
                       <Github size={16} />
                       <span className="hidden sm:inline">
@@ -141,17 +149,22 @@ const Projects = () => {
                       </span>
                     </button>
                   ))
-                ) : (
-                  <button className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm">
-                    <Github size={16} />
-                    <span className="hidden sm:inline">Code</span>
-                  </button>
-                )}
-                <button className="flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors duration-200 text-sm">
-                  <ExternalLink size={16} />
-                  <span className="hidden sm:inline">Demo</span>
-                </button>
+                ) : null}
+                {project.demoLink ? (
+                  <a
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-purple-300 hover:text-white bg-gradient-to-r from-purple-600/60 to-blue-500/60 border border-purple-400/30 rounded-lg px-3 py-1.5 font-medium transition-all duration-200 text-xs sm:text-sm shadow-md animate-glow-bar"
+                  >
+                    <ExternalLink size={16} />
+                    <span className="hidden sm:inline">Demo</span>
+                  </a>
+                ) : null}
               </div>
+
+              {/* Effet lumineux décoratif en fond */}
+              <div className="pointer-events-none absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-all duration-500"></div>
             </div>
           ))}
         </div>

@@ -1,7 +1,19 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+
+// Mock useLanguage hook for demo
+const useLanguage = () => ({
+  t: (key: string) => {
+    const translations: Record<string, string> = {
+      'about': 'À Propos',
+      'experience': 'Expérience',
+      'projects': 'Projets',
+      'skills': 'Compétences',
+      'contact': 'Contact'
+    };
+    return translations[key] || key;
+  }
+});
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,7 +22,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -33,55 +45,77 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      isScrolled 
+        ? 'bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-slate-800/50' 
+        : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3 sm:py-4">
-          <div className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            WALID HBABOU
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo */}
+          <div className="flex items-center">
+            <div className="relative group cursor-pointer">
+              <div className="text-2xl font-bold tracking-tight">
+                <span className="text-white">WALID</span>
+                <span className="ml-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                  HBABOU
+                </span>
+              </div>
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></div>
+            </div>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6 lg:space-x-8">
-            {navItems.map((item) => (
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item, index) => (
               <button
                 key={item.key}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-300 hover:text-white transition-colors duration-200 relative group text-sm lg:text-base"
+                className="relative px-5 py-2 text-gray-300 hover:text-white transition-all duration-300 group"
+                style={{ animationDelay: `${index * 50}ms` }}
               >
-                {t(item.key)}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="relative z-10 font-medium text-sm tracking-wide uppercase">
+                  {t(item.key)}
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-3/4"></div>
               </button>
             ))}
+            
+            {/* Contact Button */}
+          
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-300 hover:text-white transition-colors duration-200 p-2 -mr-2"
+            className="md:hidden relative p-2 text-gray-300 hover:text-white transition-colors duration-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
-            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            <div className="relative w-6 h-6">
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </div>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-gray-800/95 backdrop-blur-sm rounded-lg mt-2 mb-2 p-3 animate-fade-in border border-gray-700">
-            <div className="space-y-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.key}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-3 px-3 text-gray-300 hover:text-white hover:bg-gray-700/50 transition-all duration-200 rounded-md text-sm"
-                >
-                  {t(item.key)}
-                </button>
-              ))}
-            </div>
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ${
+          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="py-4 space-y-2">
+            {navItems.map((item, index) => (
+              <button
+                key={item.key}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left py-3 px-4 text-gray-300 hover:text-white hover:bg-slate-800/50 transition-all duration-300 rounded-lg font-medium text-sm tracking-wide uppercase"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                {t(item.key)}
+              </button>
+            ))}
+          
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

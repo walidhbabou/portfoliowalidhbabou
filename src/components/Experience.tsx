@@ -5,33 +5,51 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Experience = () => {
   const { t } = useLanguage();
 
-  // Tableau des expériences
+  // Tableau des expériences (internationalisé)
   const experiences = [
     {
-      title: t('devFullStack'),
-      company: t('ministry'),
-      date: 'Mai -Juin 2024',
-      location: 'Rabat, Maroc',
-      description: t('expDescription'),
-      techs: ['Laravel', 'Bootstrap', 'MySQL', 'PHP', 'JavaScript'],
+      title: t('valhkoTitle'),
+      company: t('valhkoCompany'),
+      date: t('valhkoDate'),
+      location: t('valhkoLocation'),
+      description: t('valhkoDescription'),
+      details: [
+        t('valhkoDetail1'),
+        t('valhkoDetail2'),
+        t('valhkoDetail3'),
+        t('valhkoDetail4'),
+        t('valhkoDetail5'),
+        t('valhkoDetail6'),
+      ],
+      techs: ['Java', 'Spring Boot', 'Python', 'React', 'Microservices', 'Eureka', 'Azure', 'Git', 'Docker', 'Scrum/Agile'],
     },
     {
-      title: 'Stage Développeur FullStack',
-      company: 'Valhko',
-      date: 'Mai - Juin 2025',
-      location: 'Rabat, Maroc',
-      description:
-        'Stage de deux mois axé sur le développement web et l’intégration de fonctionnalités backend et frontend.',
-      techs: ['java', 'React', 'Micro service'],
+      title: t('vmsTitle'),
+      company: t('vmsCompany'),
+      date: t('vmsDate'),
+      location: t('vmsLocation'),
+      description: t('vmsDescription'),
+      details: [
+        t('vmsDetail1'),
+        t('vmsDetail2'),
+        t('vmsDetail3'),
+        t('vmsDetail4'),
+      ],
+      techs: ['Angular', 'Java', 'Spring Boot', 'AWS S3', 'MySQL', 'Git', 'Docker'],
     },
     {
-      title: 'Projet Freelance – Système de Gestion eVote',
-      company: 'Projet Personnel / Freelance',
-      date: '2024',
-      location: 'Remote',
-      description:
-        'Développement d’un système de gestion de vote électronique sécurisé en microservices avec un frontend React et backend Java Spring Boot.',
-      techs: ['React', 'Java', 'Spring Boot', 'MySQL', 'Docker'],
+      title: t('ministryTitle'),
+      company: t('ministryCompany'),
+      date: t('ministryDate'),
+      location: t('ministryLocation'),
+      description: t('ministryDescription'),
+      details: [
+        t('ministryDetail1'),
+        t('ministryDetail2'),
+        t('ministryDetail3'),
+        t('ministryDetail4'),
+      ],
+      techs: ['Laravel', 'MySQL', 'Bootstrap', 'PHP', 'Git', 'HTML5', 'CSS3'],
     },
   ];
 
@@ -73,9 +91,15 @@ const Experience = () => {
                     </div>
                   </div>
 
-                  <p className="text-gray-300 mb-4 text-sm sm:text-base leading-relaxed">
+
+                  <p className="text-gray-300 mb-2 text-sm sm:text-base leading-relaxed">
                     {exp.description}
                   </p>
+                  <ul className="list-disc pl-5 mb-4 text-gray-400 text-xs sm:text-sm space-y-1">
+                    {exp.details && exp.details.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
 
                   <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                     {exp.techs.map((tech) => (

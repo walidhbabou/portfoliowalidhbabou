@@ -31,11 +31,12 @@ const Skills = () => {
       icon: <Code className="text-cyan-400" size={28} />,
       color: 'cyan',
       skills: [
-        { name: 'JavaScript/TypeScript', level: 90, icon: '🟨' },
-        { name: 'Java', level: 85, icon: '☕' },
-        { name: 'Python', level: 80, icon: '🐍' },
-        { name: 'PHP', level: 85, icon: '🐘' },
-        { name: 'C/C++', level: 75, icon: '⚡' }
+        { name: 'Java', level: 90 },
+        { name: 'JavaScript', level: 90 },
+        { name: 'TypeScript', level: 85 },
+        { name: 'PHP', level: 85 },
+        { name: 'Python', level: 80 },
+        { name: 'C/C++', level: 75 }
       ]
     },
     {
@@ -43,23 +44,18 @@ const Skills = () => {
       icon: <Server className="text-emerald-400" size={28} />,
       color: 'emerald',
       skills: [
-        { name: 'React.js', level: 88, icon: '⚛️' },
-        { name: 'Laravel', level: 85, icon: '🎯' },
-        { name: 'Spring Boot', level: 82, icon: '🍃' },
-        { name: 'Flutter', level: 75, icon: '🦋' },
-        { name: 'Express.js', level: 80, icon: '🚀' }
-      ]
-    },
-    {
-      title: t('skillsDevOpsCloud'),
-      icon: <Cloud className="text-violet-400" size={28} />,
-      color: 'violet',
-      skills: [
-        { name: 'Docker', level: 85, icon: '🐳' },
-        { name: 'Kubernetes', level: 75, icon: '⎈' },
-        { name: 'Jenkins', level: 85, icon: '🔧' },
-        { name: 'AWS', level: 78, icon: '☁️' },
-        { name: 'Terraform', level: 70, icon: '🏗️' }
+        { name: 'Spring Boot', level: 85 },
+        { name: 'Angular', level: 80 },
+        { name: 'React', level: 88 },
+        { name: 'Docker', level: 85 },
+        { name: 'Laravel', level: 85 },
+        { name: 'JEE', level: 75 },
+        { name: 'HTML5', level: 90 },
+        { name: 'CSS3', level: 90 },
+        { name: 'Bootstrap', level: 85 },
+        { name: 'Tailwind', level: 80 },
+        { name: 'Express.js', level: 80 },
+        { name: 'Flutter', level: 75 }
       ]
     },
     {
@@ -67,10 +63,40 @@ const Skills = () => {
       icon: <Database className="text-amber-400" size={28} />,
       color: 'amber',
       skills: [
-        { name: 'MySQL', level: 85, icon: '🗄️' },
-        { name: 'MongoDB', level: 80, icon: '🍃' },
-        { name: 'Firebase', level: 75, icon: '🔥' },
-        { name: 'PostgreSQL', level: 70, icon: '🐘' }
+        { name: 'SQL', level: 85 },
+        { name: 'MySQL', level: 85 },
+        { name: 'PL/SQL', level: 75 },
+        { name: 'MongoDB', level: 80 },
+        { name: 'PostgreSQL', level: 70 },
+        { name: 'Firebase', level: 75 },
+        { name: 'UML', level: 70 }
+      ]
+    },
+    {
+      title: 'Project Management & Dev Tools',
+      icon: <Award className="text-pink-400" size={28} />,
+      color: 'emerald',
+      skills: [
+        { name: 'Agile (Scrum)', level: 80 },
+        { name: 'Jira', level: 80 },
+        { name: 'Git', level: 90 },
+        { name: 'GitHub', level: 90 },
+        { name: 'GitHub Actions', level: 80 },
+        { name: 'GitLab', level: 75 },
+        { name: 'Linux', level: 80 }
+      ]
+    },
+    {
+      title: t('skillsDevOpsCloud'),
+      icon: <Cloud className="text-violet-400" size={28} />,
+      color: 'violet',
+      skills: [
+        { name: 'AWS (Lambda, ECS, EC2, S3)', level: 80 },
+        { name: 'Azure (App Service, Functions, DevOps, Storage, Virtual Machines)', level: 80 },
+        { name: 'Kubernetes', level: 75 },
+        { name: 'Terraform', level: 70 },
+        { name: 'Ansible', level: 70 },
+        { name: 'Jenkins', level: 85 }
       ]
     }
   ];
@@ -124,11 +150,12 @@ const Skills = () => {
             <button
               key={index}
               onClick={() => setActiveCategory(index)}
-              className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base ${
-                activeCategory === index
-                  ? 'bg-white/10 text-white border border-white/20 shadow-lg'
-                  : 'bg-white/5 text-gray-400 border border-transparent hover:bg-white/10 hover:text-white'
-              }`}
+              className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base relative overflow-hidden
+                ${activeCategory === index
+                  ? 'bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-white border border-blue-400/40 shadow-xl animate-glow'
+                  : 'bg-white/5 text-gray-400 border border-transparent hover:bg-white/10 hover:text-white'}
+              `}
+              style={{ animationDelay: `${index * 0.08}s` }}
             >
               {category.icon}
               <span className="hidden sm:inline">{category.title}</span>
@@ -139,79 +166,75 @@ const Skills = () => {
         {/* Skills Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-12 lg:mb-16">
           {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className={`bg-gradient-to-br ${getColorClasses(category.color)} p-4 sm:p-6 lg:p-8 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
-                activeCategory === categoryIndex 
-                  ? 'scale-105 shadow-2xl opacity-100' 
-                  : activeCategory !== null 
-                    ? 'opacity-50 scale-95' 
-                    : 'opacity-100 scale-100'
-              }`}
-            >
-              <div className="flex items-center gap-3 sm:gap-4 mb-6 lg:mb-8">
-                <div className="p-2 sm:p-3 bg-white/10 rounded-xl">
-                  {category.icon}
+            activeCategory === categoryIndex && (
+              <div
+                key={categoryIndex}
+                className={`bg-gradient-to-br ${getColorClasses(category.color)} p-4 sm:p-6 lg:p-8 rounded-2xl border backdrop-blur-md transition-all duration-500 shadow-xl scale-105 shadow-blue-500/30 animate-fade-in-up z-10 ring-2 ring-blue-400/30`}
+                style={{ animationDelay: `${categoryIndex * 0.12}s` }}
+              >
+                <div className="flex items-center gap-3 sm:gap-4 mb-6 lg:mb-8">
+                  <div className="p-2 sm:p-3 bg-white/10 rounded-xl">
+                    {category.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white">{category.title}</h3>
+                    <p className="text-gray-400 text-sm sm:text-base">{t('skillsProfessionalLevel')}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white">{category.title}</h3>
-                  <p className="text-gray-400 text-sm sm:text-base">{t('skillsProfessionalLevel')}</p>
-                </div>
-              </div>
 
-              <div className="space-y-4 sm:space-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="group p-3 sm:p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20">
-                    <div className="group-hover:scale-105 transition-all duration-300">
-                      <div className="flex items-center justify-between mb-3 sm:mb-4">
-                        <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
-                          <div className="p-1.5 sm:p-2 bg-white/10 rounded-lg backdrop-blur-sm flex-shrink-0">
-                            <span className="text-base sm:text-lg lg:text-xl">{skill.icon}</span>
+                <div className="space-y-4 sm:space-y-6">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex} className="group p-3 sm:p-4 rounded-xl bg-white/10 hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10 transition-all duration-300 border border-white/10 hover:border-blue-400/30 shadow-md hover:shadow-blue-400/10 animate-fade-in-up"
+                      style={{ animationDelay: `${categoryIndex * 0.12 + skillIndex * 0.06}s` }}
+                    >
+                      <div className="group-hover:scale-105 transition-all duration-300">
+                        <div className="flex items-center justify-between mb-3 sm:mb-4">
+                          <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
+                            <div className="min-w-0 flex-1">
+                              <span className="text-white font-semibold text-sm sm:text-base lg:text-lg block truncate">{skill.name}</span>
+                              <span className="text-gray-400 text-xs sm:text-sm">
+                                {getSkillLevel(skill.level)}
+                              </span>
+                            </div>
                           </div>
-                          <div className="min-w-0 flex-1">
-                            <span className="text-white font-semibold text-sm sm:text-base lg:text-lg block truncate">{skill.name}</span>
-                            <span className="text-gray-400 text-xs sm:text-sm">
-                              {getSkillLevel(skill.level)}
-                            </span>
+                          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+                            {[...Array(4)].map((_, i) => (
+                              <div
+                                key={i}
+                                className={`w-1.5 sm:w-2 h-4 sm:h-6 rounded-full transition-all duration-500 ${
+                                  i < Math.floor(skill.level / 25) 
+                                    ? `bg-gradient-to-t ${getProgressColor(category.color)} shadow-lg animate-pulse` 
+                                    : 'bg-white/20'
+                                }`}
+                                style={{
+                                  transitionDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1) + (i * 0.05)}s`
+                                }}
+                              />
+                            ))}
                           </div>
                         </div>
-                        <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
-                          {[...Array(4)].map((_, i) => (
-                            <div
-                              key={i}
-                              className={`w-1.5 sm:w-2 h-4 sm:h-6 rounded-full transition-all duration-500 ${
-                                i < Math.floor(skill.level / 25) 
-                                  ? `bg-gradient-to-t ${getProgressColor(category.color)} shadow-lg` 
-                                  : 'bg-white/20'
-                              }`}
-                              style={{
-                                transitionDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1) + (i * 0.05)}s`
-                              }}
-                            />
-                          ))}
+                        <div className="relative h-1 bg-white/10 rounded-full overflow-hidden">
+                          <div
+                            className={`absolute top-0 left-0 h-full bg-gradient-to-r ${getProgressColor(category.color)} rounded-full transition-all duration-1000 ease-out animate-glow-bar`}
+                            style={{
+                              width: isVisible ? `${skill.level}%` : '0%',
+                              transitionDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1)}s`
+                            }}
+                          />
+                          <div
+                            className={`absolute top-0 left-0 h-full bg-gradient-to-r ${getProgressColor(category.color)} rounded-full opacity-40 blur-sm transition-all duration-1000 ease-out animate-glow-bar`}
+                            style={{
+                              width: isVisible ? `${skill.level}%` : '0%',
+                              transitionDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1)}s`
+                            }}
+                          />
                         </div>
-                      </div>
-                      <div className="relative h-1 bg-white/10 rounded-full overflow-hidden">
-                        <div
-                          className={`absolute top-0 left-0 h-full bg-gradient-to-r ${getProgressColor(category.color)} rounded-full transition-all duration-1000 ease-out`}
-                          style={{
-                            width: isVisible ? `${skill.level}%` : '0%',
-                            transitionDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1)}s`
-                          }}
-                        />
-                        <div
-                          className={`absolute top-0 left-0 h-full bg-gradient-to-r ${getProgressColor(category.color)} rounded-full opacity-50 blur-sm transition-all duration-1000 ease-out`}
-                          style={{
-                            width: isVisible ? `${skill.level}%` : '0%',
-                            transitionDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1)}s`
-                          }}
-                        />
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )
           ))}
         </div>
 
