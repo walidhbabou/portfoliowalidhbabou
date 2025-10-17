@@ -1,5 +1,6 @@
 
 import type { Config } from "tailwindcss";
+import animatePlugin from 'tailwindcss-animate';
 
 export default {
 	darkMode: ["class"],
@@ -25,6 +26,11 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				/* Neon theme tokens */
+				'neon-primary': 'rgb(var(--neon-primary))',
+				'neon-secondary': 'rgb(var(--neon-secondary))',
+				'neon-primary-hex': 'var(--neon-primary-hex)',
+				'neon-secondary-hex': 'var(--neon-secondary-hex)',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -124,5 +130,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [animatePlugin],
 } satisfies Config;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import EffectsToggle from './EffectsToggle';
 
 // Mock useLanguage hook for demo
 const useLanguage = () => ({
@@ -47,7 +48,7 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-slate-800/50' 
+        ? 'bg-[rgba(8,8,10,0.6)] backdrop-blur-md shadow-lg border-b border-[rgba(255,255,255,0.04)] glass-card' 
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -56,12 +57,13 @@ const Navigation = () => {
           <div className="flex items-center">
             <div className="relative group cursor-pointer">
               <div className="text-2xl font-bold tracking-tight">
-                <span className="text-white">WALID</span>
-                <span className="ml-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                <span className="text-white">WALID </span>
+            
+                <span className="text-white">
                   HBABOU
                 </span>
               </div>
-              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[var(--neon-primary-hex)] to-[var(--neon-secondary-hex)] transition-all duration-300 group-hover:w-full"></div>
             </div>
           </div>
 
@@ -77,8 +79,8 @@ const Navigation = () => {
                 <span className="relative z-10 font-medium text-sm tracking-wide uppercase">
                   {t(item.key)}
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-3/4"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--neon-primary-hex)]/10 to-[var(--neon-secondary-hex)]/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[var(--neon-primary-hex)] to-[var(--neon-secondary-hex)] transition-all duration-300 group-hover:w-3/4"></div>
               </button>
             ))}
             
@@ -107,7 +109,7 @@ const Navigation = () => {
               <button
                 key={item.key}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-3 px-4 text-gray-300 hover:text-white hover:bg-slate-800/50 transition-all duration-300 rounded-lg font-medium text-sm tracking-wide uppercase"
+                className="block w-full text-left py-3 px-4 text-gray-300 hover:text-white hover:bg-[rgba(255,255,255,0.02)] transition-all duration-300 rounded-lg font-medium text-sm tracking-wide uppercase"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {t(item.key)}
@@ -116,6 +118,7 @@ const Navigation = () => {
           
           </div>
         </div>
+            <EffectsToggle />
       </div>
     </nav>
   );

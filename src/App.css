@@ -1,42 +1,133 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  /* Neon Contrast theme variables */
+  --bg: #0b0b0d;
+  --surface: #0f1724;
+  --neon-primary: 0 240 199; /* rgb parts for rgba usage */
+  --neon-secondary: 139 92 246;
+  --neon-primary-hex: #00f0c7;
+  --neon-secondary-hex: #8b5cf6;
+  --muted: #9ca3af;
+  --text: #ffffff;
+  --glass: rgba(0,0,0,0.35);
+  /* Timing tokens */
+  --reveal-duration: 400ms;
+  --reveal-duration-slow: 800ms;
+  --reveal-ease: cubic-bezier(.22,.9,.3,1);
+  --typewriter-ms: 50ms;
+  --parallax-mobile-factor: 0.35;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+html, body, #root { height: 100%; }
+
+body {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(var(--neon-secondary),0.06), transparent 8%), radial-gradient(900px 400px at 90% 80%, rgba(var(--neon-primary),0.06), transparent 8%), var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.neon-accent {
+  background-image: linear-gradient(90deg, rgba(var(--neon-primary),1), rgba(var(--neon-secondary),1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.neon-glow {
+  box-shadow: 0 8px 30px rgba(var(--neon-primary),0.12), 0 0 60px rgba(var(--neon-secondary),0.06) inset;
 }
 
-.card {
-  padding: 2em;
+.glass-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
 }
 
-.read-the-docs {
-  color: #888;
+@keyframes neon-pulse {
+  0% { filter: drop-shadow(0 0 6px rgba(var(--neon-primary),0.12)); transform: translateY(0); }
+  50% { filter: drop-shadow(0 0 16px rgba(var(--neon-primary),0.18)); transform: translateY(-6px); }
+  100% { filter: drop-shadow(0 0 6px rgba(var(--neon-primary),0.12)); transform: translateY(0); }
 }
+
+/* small helpers used by components */
+.neon-blob { animation: neon-pulse 3.5s ease-in-out infinite; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(18px) scale(0.995); transition: opacity var(--reveal-duration) var(--reveal-ease), transform var(--reveal-duration) var(--reveal-ease); will-change: opacity, transform; }
+.reveal.in-view { opacity: 1; transform: translateY(0) scale(1); }
+
+.reveal-slow { transition-duration: var(--reveal-duration-slow); }
+
+/* Profile image frame and animation */
+.profile-frame {
+  display: inline-block;
+  border-radius: 9999px;
+  padding: 8px;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+  box-shadow: 0 10px 30px rgba(var(--neon-primary),0.06), inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+.profile-frame.neon-profile { animation: profile-float 6s ease-in-out infinite; }
+.profile-img { display:block; border-radius:9999px; width:100%; height:100%; object-fit:cover; }
+
+@keyframes profile-float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.profile-frame:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 18px 50px rgba(var(--neon-primary),0.12); }
+
+.profile-frame::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 0 rgba(var(--neon-primary),0);
+  transition: box-shadow 260ms ease, border-color 260ms ease;
+}
+.profile-frame:hover::after {
+  border-color: rgba(var(--neon-primary),0.28);
+  box-shadow: 0 12px 40px rgba(var(--neon-primary),0.12), 0 0 40px rgba(var(--neon-secondary),0.08);
+}
+
+.effects-disabled .profile-frame { animation: none !important; transform: none !important; box-shadow: none !important; }
+
+.badge-available { background: linear-gradient(90deg, rgba(var(--neon-primary),0.14), rgba(var(--neon-secondary),0.1)); color: var(--neon-primary-hex); border: 1px solid rgba(var(--neon-primary),0.12); }
+.badge-available:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(var(--neon-primary),0.12); }
+
+/* Download CTA stronger style */
+.download-cta {
+  background: linear-gradient(90deg, var(--neon-primary-hex), var(--neon-secondary-hex));
+  color: #071022; /* dark text for contrast on neon */
+  padding: .625rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(var(--neon-primary),0.18), 0 0 60px rgba(var(--neon-secondary),0.08);
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.download-cta:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 60px rgba(var(--neon-primary),0.22), 0 0 80px rgba(var(--neon-secondary),0.12); }
+.effects-disabled .download-cta { box-shadow: none; }
+
+/* Typewriter */
+.typewriter { display: inline-block; white-space: nowrap; overflow: hidden; }
+
+/* Parallax helper - elements with data-parallax attribute */
+[data-parallax] { transition: transform 0.2s linear; will-change: transform; }
+
+/* Disable effects when requested */
+.effects-disabled .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
+.effects-disabled [data-parallax] { transition: none !important; transform: none !important; }
+.effects-disabled .neon-blob { animation: none !important; box-shadow: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
+  [data-parallax] { transition: none !important; transform: none !important; }
+  .neon-blob { animation: none !important; }
+}
+
+*** End Patch
