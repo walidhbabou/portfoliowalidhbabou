@@ -23,6 +23,43 @@ const Hero = () => {
     // run typewriter after a small delay so it shows up nicely
     const nameEl = document.getElementById('type-name');
     setTimeout(() => typeWrite(nameEl), 400);
+    // Cursor magnet for titles/CTAs (subtle)
+    const hero = document.getElementById('hero');
+    if (hero && !document.documentElement.classList.contains('effects-disabled')) {
+      const magnetTargets = Array.from(hero.querySelectorAll<HTMLElement>('.cursor-magnet'));
+      function onMove(e: MouseEvent) {
+        const x = e.clientX;
+        const y = e.clientY;
+        for (const el of magnetTargets) {
+          const r = el.getBoundingClientRect();
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          const dx = (x - cx);
+          const dy = (y - cy);
+          // distance
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          const maxDist = 220; // effect radius
+          if (dist > maxDist) {
+            el.style.transform = '';
+            continue;
+          }
+          const strength = (1 - (dist / maxDist)) * 8; // px
+          const tx = (dx / dist) * strength || 0;
+          const ty = (dy / dist) * strength || 0;
+          el.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+        }
+      }
+      function onLeave() {
+        for (const el of magnetTargets) el.style.transform = '';
+      }
+      hero.addEventListener('mousemove', onMove);
+      hero.addEventListener('mouseleave', onLeave);
+      // cleanup
+      return () => {
+        hero.removeEventListener('mousemove', onMove);
+        hero.removeEventListener('mouseleave', onLeave);
+      };
+    }
   }, []);
 
   return (
@@ -42,9 +79,9 @@ const Hero = () => {
           <div className="space-y-6 lg:space-y-8 animate-fade-in text-center lg:text-left">
             <div className="space-y-3 lg:space-y-4">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                <span className="neon-accent typewriter" data-text="WALID" id="type-name">WALID</span>
+                <span className="neon-accent typewriter cursor-magnet" data-text="WALID" id="type-name">WALID</span>
                 <br />
-                <span className="text-white">HBABOU</span>
+                <span className="text-white cursor-magnet">HBABOU</span>
               </h1>
               <h2 className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-light">
                 {t('heroTitle')}
@@ -75,10 +112,10 @@ const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start">
               <button 
                 onClick={handleDownloadCV}
-                className="download-cta px-6 lg:px-8 py-2.5 lg:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2 justify-center text-sm lg:text-base neon-glow"
+                className="download-cta px-6 lg:px-8 py-2.5 lg:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2 justify-center text-sm lg:text-base neon-glow cursor-magnet"
               >
                 <Download size={18} className="lg:w-5 lg:h-5" />
                 {t('downloadCV')}

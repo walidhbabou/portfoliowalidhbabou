@@ -8,6 +8,7 @@ import Skills from '../components/Skills';
 import Contact from '../components/Contact';
 import Navigation from '../components/Navigation';
 import LanguageSwitcher from '../components/LanguageSwitcher';
+import MiniRobot from '../components/MiniRobot';
 import { LanguageProvider } from '../contexts/LanguageContext';
 
 const Index = () => {
@@ -30,6 +31,8 @@ const Index = () => {
           <Skills />
           <Contact />
         </main>
+        {/* Global Mini Robot assistant */}
+        <MiniRobot />
       </div>
     </LanguageProvider>
   );
