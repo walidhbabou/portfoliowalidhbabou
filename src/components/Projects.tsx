@@ -85,6 +85,37 @@ const Projects = () => {
       githubLinks: [
         "https://github.com/walidhbabou/projet-pfa.git"
       ]
+    },
+    {
+      title: "SmartResume Analyzer",
+      description: "Application full-stack d'analyse de CV avec IA (OpenAI GPT-4, Anthropic Claude). Analyse les CV contre des descriptions de poste avec scores de correspondance, compétences manquantes et recommandations détaillées.",
+      technologies: ["Python", "TypeScript", "OpenAI GPT-4", "Anthropic Claude", "Clean Architecture"],
+      icon: <Database className="text-emerald-400" size={24} />,
+      category: "AI/ML",
+      githubLinks: [
+        "https://github.com/walidhbabou/smart-resumer.git"
+      ]
+    },
+    {
+      title: "SendWise - Campaign Creator Suite",
+      description: "Système complet de gestion de campagnes email intégré avec Gmail. Authentification OAuth 2.0, gestion de contacts et groupes, envoi de campagnes ciblées via Gmail API avec statistiques en temps réel.",
+      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Gmail API", "OAuth 2.0", "shadcn/ui"],
+      icon: <Code2 className="text-violet-400" size={24} />,
+      category: "Full Stack",
+      githubLinks: [
+        "https://github.com/walidhbabou/SendWise.git"
+      ]
+    },
+    {
+      title: "Koora.com",
+      description: "Plateforme web complète dédiée au football avec fonctionnalités interactives et interface utilisateur moderne.",
+      technologies: ["React", "TypeScript", "Node.js"],
+      icon: <Code2 className="text-teal-400" size={24} />,
+      category: "Web Development",
+      githubLinks: [
+        "https://github.com/walidhbabou/koora.com.git"
+      ],
+      demoLink: "https://koora.com/"
     }
   ];
 

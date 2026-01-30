@@ -98,6 +98,21 @@ const Skills = () => {
         { name: 'Ansible', level: 70 },
         { name: 'Jenkins', level: 85 }
       ]
+    },
+    {
+      title: t('skillsTesting'),
+      icon: <Award className="text-rose-400" size={28} />,
+      color: 'cyan',
+      skills: [
+        { name: 'JUnit', level: 85 },
+        { name: 'Mockito', level: 80 },
+        { name: 'Jest', level: 80 },
+        { name: 'React Testing Library', level: 75 },
+        { name: 'Selenium', level: 75 },
+        { name: 'Cypress', level: 70 },
+        { name: 'Postman', level: 85 },
+        { name: 'SonarQube', level: 75 }
+      ]
     }
   ];
 
