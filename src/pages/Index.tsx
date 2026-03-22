@@ -20,10 +20,12 @@ const Index = () => {
 
   return (
     <LanguageProvider>
-      <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`portfolio-shell min-h-screen text-white transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="portfolio-noise" aria-hidden="true"></div>
+        <div className="portfolio-grid-glow" aria-hidden="true"></div>
         <Navigation />
         <LanguageSwitcher />
-        <main className="pt-16 sm:pt-20">
+        <main className="pt-16 sm:pt-20 relative z-10">
           <Hero />
           <About />
           <Experience />
