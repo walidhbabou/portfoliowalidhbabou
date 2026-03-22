@@ -143,15 +143,16 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 reveal reveal-slow">
+    <section id="skills" className="py-12 sm:py-16 lg:py-24 reveal reveal-slow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="section-shell">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-20">
           <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-3 sm:px-4 py-2 bg-white/5 rounded-full border border-white/10">
             <Star className="text-yellow-400" size={18} sm:size={20} />
             <span className="text-gray-300 font-medium text-sm sm:text-base">{t('skillsTechnicalExpertise')}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-4 sm:mb-6">
+          <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6">
             {t('skillsTitle')}
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto">
@@ -280,6 +281,7 @@ const Skills = () => {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>

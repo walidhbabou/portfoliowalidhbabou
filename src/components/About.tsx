@@ -28,13 +28,14 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gray-800/50 reveal">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 reveal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="section-shell">
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="section-title">
             {t('aboutTitle')}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+          <div className="section-divider"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -49,11 +50,11 @@ const About = () => {
             </p>
             
             <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4 sm:pt-6">
-              <div className="text-center p-3 sm:p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+              <div className="text-center p-3 sm:p-4 neo-stat-chip">
                 <div className="text-xl sm:text-2xl font-bold text-blue-400">15+</div>
                 <div className="text-gray-400 text-xs sm:text-sm">Projets Réalisés</div>
               </div>
-              <div className="text-center p-3 sm:p-4 bg-gray-900/50 rounded-lg border border-gray-700">
+              <div className="text-center p-3 sm:p-4 neo-stat-chip">
                 <div className="text-xl sm:text-2xl font-bold text-purple-400">5+</div>
                 <div className="text-gray-400 text-xs sm:text-sm">Technologies Maîtrisées</div>
               </div>
@@ -69,7 +70,7 @@ const About = () => {
             {education.map((edu, index) => (
               <div 
                 key={index} 
-                className="bg-gray-900/50 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10"
+                className="neon-card p-4 sm:p-6 rounded-lg transition-all duration-300"
               >
                 <div className="flex items-start gap-3 sm:gap-4">
                   <div className="text-xl sm:text-2xl flex-shrink-0">{edu.icon}</div>
@@ -85,6 +86,7 @@ const About = () => {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>

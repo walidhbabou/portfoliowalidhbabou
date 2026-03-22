@@ -77,7 +77,7 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-[rgba(8,8,10,0.72)] backdrop-blur-md shadow-xl border-b border-[rgba(255,255,255,0.06)] glass-card/backdrop' 
+        ? 'bg-[rgba(8,8,10,0.72)] backdrop-blur-md shadow-xl border-b border-[rgba(255,255,255,0.06)] glass-card/backdrop nav-glass' 
         : 'bg-transparent'
     }`}>
       {/* thin scroll progress indicator */}
@@ -144,7 +144,7 @@ const Navigation = () => {
         <div className={`md:hidden overflow-hidden transition-all duration-300 ${
           isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
-          <div className="py-4 space-y-2">
+          <div className="py-4 space-y-2 nav-mobile-panel">
             {navItems.map((item, index) => (
               <button
                 key={item.key}

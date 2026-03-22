@@ -124,20 +124,21 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-gray-800/50 reveal">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 reveal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="section-shell">
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="section-title">
             {t('projectsTitle')}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+          <div className="section-divider"></div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="glass bg-gradient-to-br from-gray-900/60 to-gray-800/60 p-5 sm:p-7 rounded-2xl border border-blue-900/30 hover:border-blue-500/60 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 group animate-fade-in-up hover:scale-[1.04] relative overflow-hidden"
+              className="glass neon-card p-5 sm:p-7 rounded-2xl transition-all duration-300 group animate-fade-in-up hover:scale-[1.04] relative overflow-hidden"
               style={{ animationDelay: `${index * 0.12}s` }}
             >
               <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -198,6 +199,7 @@ const Projects = () => {
               <div className="pointer-events-none absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-all duration-500"></div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

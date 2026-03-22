@@ -9,13 +9,14 @@ const Contact = () => {
 
 
   return (
-  <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-800/50 reveal">
+  <section id="contact" className="py-12 sm:py-16 lg:py-20 reveal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="section-shell">
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="section-title">
             {t('contactTitle')}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-4"></div>
+          <div className="section-divider mb-4"></div>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
             {t('contactDescription')}
           </p>
@@ -23,7 +24,7 @@ const Contact = () => {
 
         <div className="flex flex-col items-center justify-center gap-8 animate-fade-in">
           <div className="w-full max-w-md space-y-6">
-            <div className="flex items-center gap-4 p-4 bg-gray-900/60 rounded-xl border border-blue-700/30 shadow-md">
+            <div className="flex items-center gap-4 p-4 neon-card rounded-xl shadow-md">
               <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full flex-shrink-0">
                 <Mail size={22} className="text-white" />
               </div>
@@ -32,7 +33,7 @@ const Contact = () => {
                 <p className="text-blue-300 text-sm break-all font-mono">walid.hbabou1999@gmail.com</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-4 bg-gray-900/60 rounded-xl border border-blue-700/30 shadow-md">
+            <div className="flex items-center gap-4 p-4 neon-card rounded-xl shadow-md">
               <div className="bg-gradient-to-r from-green-500 to-blue-600 p-3 rounded-full flex-shrink-0">
                 <Phone size={22} className="text-white" />
               </div>
@@ -41,7 +42,7 @@ const Contact = () => {
                 <p className="text-blue-300 text-sm font-mono">+212 607040821</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-4 bg-gray-900/60 rounded-xl border border-blue-700/30 shadow-md">
+            <div className="flex items-center gap-4 p-4 neon-card rounded-xl shadow-md">
               <div className="bg-gradient-to-r from-purple-500 to-cyan-600 p-3 rounded-full flex-shrink-0">
                 <MapPin size={22} className="text-white" />
               </div>
@@ -72,6 +73,7 @@ const Contact = () => {
               </a>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
