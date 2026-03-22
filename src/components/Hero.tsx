@@ -74,6 +74,7 @@ const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="neo-hero-panel rounded-[2rem] p-6 sm:p-8 lg:p-12">
         <div className="grid lg:grid-cols-[1fr_480px] gap-8 lg:gap-20 items-center">
           {/* Text Content */}
           <div className="space-y-6 lg:space-y-8 animate-fade-in text-center lg:text-left">
@@ -91,9 +92,24 @@ const Hero = () => {
               </h3>
             </div>
 
-            <p className="text-gray-400 text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-gray-300/90 text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
               {t('heroDescription')}
             </p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0">
+              <div className="neo-stat-chip">
+                <span>10+</span>
+                <small>Projects</small>
+              </div>
+              <div className="neo-stat-chip">
+                <span>3+</span>
+                <small>Années</small>
+              </div>
+              <div className="neo-stat-chip col-span-2 sm:col-span-1">
+                <span>24/7</span>
+                <small>Support</small>
+              </div>
+            </div>
 
             {/* Contact Info */}
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 lg:gap-4 text-sm text-gray-400 justify-center lg:justify-start">
@@ -152,11 +168,11 @@ const Hero = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
     </section>
   );
 };
 
 export default Hero;
-
 

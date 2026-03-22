@@ -77,7 +77,7 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-[rgba(8,8,10,0.72)] backdrop-blur-md shadow-xl border-b border-[rgba(255,255,255,0.06)] glass-card/backdrop' 
+        ? 'nav-cyber-shell backdrop-blur-md shadow-xl border-b border-[rgba(70,255,228,0.22)]' 
         : 'bg-transparent'
     }`}>
       {/* thin scroll progress indicator */}
@@ -88,36 +88,27 @@ const Navigation = () => {
         <div className={`flex justify-between items-center transition-all ${isScrolled ? 'h-16' : 'h-20'}`}>
           {/* Logo */}
           <div className="flex items-center">
-            <div className="relative group cursor-pointer nav-logo" role="button" aria-label="Accueil" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <div className="flex items-center gap-3">
-                <svg className="nav-logo-mark" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                  <defs>
-                    <linearGradient id="g1" x1="0" x2="1">
-                      <stop offset="0" stopColor="var(--neon-primary-hex)" />
-                      <stop offset="1" stopColor="var(--neon-secondary-hex)" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="18" cy="18" r="16" fill="url(#g1)" opacity="0.14" />
-                  <path d="M12 22 L24 14" stroke="url(#g1)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+            <div className="relative group cursor-pointer nav-logo nav-logo-unique" role="button" aria-label="Accueil" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <div className="flex items-center gap-4">
+                <div className="logo-cut" aria-hidden="true"></div>
                 <div className="text-2xl font-bold tracking-tight leading-none">
-                  <span className="text-white nav-logo-primary">WALID</span>
-                  <div className="text-sm text-gray-300 nav-logo-sub">HBABOU</div>
+                  <span className="text-white nav-logo-primary tracking-wider">WALID</span>
+                  <div className="text-sm text-gray-200 nav-logo-sub">HBABOU</div>
                 </div>
               </div>
-              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[var(--neon-primary-hex)] to-[var(--neon-secondary-hex)] transition-all duration-300 group-hover:w-full" />
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#31edcf] to-[#4f7dff] transition-all duration-300 group-hover:w-full" />
             </div>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-2 nav-items-shell">
             {navItems.map((item, index) => {
               const active = activeSection === item.id;
               return (
                 <button
                   key={item.key}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-4 py-2 text-sm uppercase font-medium transition-all duration-300 nav-item group ${active ? 'text-white' : 'text-gray-300'}`}
+                  className={`relative px-4 py-2 text-sm uppercase font-semibold transition-all duration-300 nav-item group nav-item-unique ${active ? 'text-white active' : 'text-gray-300'}`}
                   style={{ animationDelay: `${index * 50}ms` }}
                   aria-current={active ? 'true' : undefined}
                 >
@@ -144,7 +135,7 @@ const Navigation = () => {
         <div className={`md:hidden overflow-hidden transition-all duration-300 ${
           isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
-          <div className="py-4 space-y-2">
+          <div className="py-4 space-y-2 nav-mobile-panel nav-cyber-shell">
             {navItems.map((item, index) => (
               <button
                 key={item.key}

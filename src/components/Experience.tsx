@@ -56,18 +56,19 @@ const Experience = () => {
   return (
     <section id="experience" className="py-12 sm:py-16 lg:py-20 reveal reveal-slow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="section-shell">
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="section-title">
             {t('experienceTitle')}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+          <div className="section-divider"></div>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-6 lg:space-y-10">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 animate-fade-in"
+              className="neon-card p-4 sm:p-6 lg:p-8 rounded-xl transition-all duration-300 animate-fade-in"
             >
               <div className="flex flex-col md:flex-row md:items-center gap-4 sm:gap-6">
                 <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 sm:p-4 rounded-full w-fit mx-auto md:mx-0">
@@ -115,6 +116,7 @@ const Experience = () => {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>
